@@ -1,7 +1,7 @@
 {
   "swagger": "2.0",
   "info": {
-    "version": "2023-10-01",
+    "version": "2023-11-01",
     "title": "Azure App Configuration"
   },
   "schemes": [
@@ -157,6 +157,9 @@
             "type": "string"
           },
           {
+            "$ref": "#/parameters/TagFilters"
+          },
+          {
             "$ref": "#/parameters/SyncTokens"
           },
           {
@@ -256,6 +259,9 @@
             "in": "query",
             "description": "A filter used to match labels",
             "type": "string"
+          },
+          {
+            "$ref": "#/parameters/TagFilters"
           },
           {
             "$ref": "#/parameters/SyncTokens"
@@ -1949,6 +1955,15 @@
     }
   },
   "parameters": {
+    "TagFilters": {
+      "name": "tags",
+      "in": "query",
+      "description": "Tag filters.",
+      "type": "object",
+      "additionalProperties": {
+        "type": "string"
+      }
+    },
     "SyncTokens": {
       "name": "Sync-Token",
       "in": "header",
